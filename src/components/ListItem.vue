@@ -1,18 +1,20 @@
 <template>
   <div>
-    <h1>List Item</h1>
+    <h1>List Churches</h1>
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Item Name</th>
-          <th>Item Price</th>
+          <th>Item Address</th>
+          <th>Item City</th>
           <th colspan="2">Action</th>
         </tr>
       </thead>
       <tbody>
           <tr v-for="item of items" :key="item['.key']">
             <td>{{ item.name }}</td>
-            <td>{{ item.price }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.city }}</td>
             <td>
                 <router-link :to="{ name: 'Edit', params: {id: item['.key']} }" class="btn btn-warning">
                   Edit

@@ -2,7 +2,7 @@
   <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3>Edit Item</h3>
+                <h3>Edit Church</h3>
             </div>
             <div class="card-body">
                 <form v-on:submit.prevent="updateItem">
@@ -11,11 +11,15 @@
                         <input type="text" class="form-control" v-model="newItem.name"/>
                     </div>
                     <div class="form-group">
-                        <label>Item Price:</label>
-                        <input type="text" class="form-control" v-model="newItem.price" />
+                        <label>Item Address:</label>
+                        <input type="text" class="form-control" v-model="newItem.address" />
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Update Item"/>
+                        <label>Item City:</label>
+                        <input type="text" class="form-control" v-model="newItem.city" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Update Church"/>
                     </div>
                 </form>
             </div>
@@ -47,7 +51,8 @@ export default {
      let item = this.itemsObj[this.$route.params.id]
      this.newItem = {
        name: item.name,
-       price: item.price
+       address: item.address,
+       city: item.city
      }
   },
   methods: {

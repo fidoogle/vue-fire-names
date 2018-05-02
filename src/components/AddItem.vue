@@ -2,7 +2,7 @@
   <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3>Add Item</h3>
+                <h3>Add Church</h3>
             </div>
             <div class="card-body">
                 <form v-on:submit.prevent="addItem">
@@ -11,11 +11,15 @@
                         <input type="text" class="form-control" v-model="newItem.name"/>
                     </div>
                     <div class="form-group">
-                        <label>Item Price:</label>
-                        <input type="text" class="form-control" v-model="newItem.price"/>
+                        <label>Item Address:</label>
+                        <input type="text" class="form-control" v-model="newItem.address"/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Add Item"/>
+                        <label>Item City:</label>
+                        <input type="text" class="form-control" v-model="newItem.city"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Add Church"/>
                     </div>
                 </form>
             </div>
@@ -37,7 +41,8 @@ export default {
     return {
       newItem: {
         name: '',
-        price: ''
+        address: '',
+        city: ''
       }
     };
   },
@@ -45,10 +50,12 @@ export default {
     addItem() {
       this.$firebaseRefs.items.push({
         name: this.newItem.name,
-        price: this.newItem.price
+        address: this.newItem.address,
+        city: this.newItem.city
       });
       this.newItem.name = '';
-      this.newItem.price = '';
+      this.newItem.address = '';
+      this.newItem.city = '';
       this.$router.push('/index');
     }
   }

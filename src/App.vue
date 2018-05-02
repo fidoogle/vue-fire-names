@@ -6,10 +6,10 @@
           <router-link :to="{ name: 'Home' }" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link :to="{ name: 'Add' }" class="nav-link">Add Item</router-link>
+          <router-link :to="{ name: 'Add' }" class="nav-link">Add Church</router-link>
         </li>
         <li class="nav-item">
-          <router-link :to="{ name: 'List' }" class="nav-link">All Item</router-link>
+          <router-link :to="{ name: 'List' }" class="nav-link">All Churches</router-link>
         </li>
       </ul>
     </nav>
